@@ -147,7 +147,7 @@ public class Menuartistas2Controller implements Initializable {
             verDiscos();
         } else {
 
-            showWarning("ERROR", "No se ha podido ver la biografía", "Seleccione un artista.");
+            showWarning("ERROR", "No se ha podido ver la discografía", "Seleccione un artista.");
 
         }
     }
