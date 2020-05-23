@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 public class MenubdController {
 
     @FXML
-    private void switchToPrimary() throws IOException {
+    private void retrocederVentana() throws IOException {
         App.setRoot("conectabd");
     }
     
@@ -19,6 +19,12 @@ public class MenubdController {
       @FXML
     private void verArtista2() throws IOException {
         App.setRoot("menuartistas2");
+    
+    }
+    
+      @FXML
+    private void iniciaSesion2() throws IOException {
+        App.setRoot("iniciasesion");
     
     }
 }

@@ -5,34 +5,28 @@
  */
 package com.andrea.proyectofinal.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author ANDREA
  */
 public class Discs {
-    private String id_disc;
     private String stage_name;
     private String album_title;
-    private int song_num;
+    private String song_num;
     private String duration;
 
     public Discs() {
+        
+        this("","","","");
     }
 
-    public Discs(String id_disc, String stage_name, String album_title, int song_num, String duration) {
-        this.id_disc = id_disc;
+    public Discs(String stage_name, String album_title, String song_num, String duration) {
         this.stage_name = stage_name;
         this.album_title = album_title;
         this.song_num = song_num;
         this.duration = duration;
-    }
-
-    public String getId_disc() {
-        return id_disc;
-    }
-
-    public void setId_disc(String id_disc) {
-        this.id_disc = id_disc;
     }
 
     public String getStage_name() {
@@ -51,11 +45,11 @@ public class Discs {
         this.album_title = album_title;
     }
 
-    public int getSong_num() {
+    public String getSong_num() {
         return song_num;
     }
 
-    public void setSong_num(int song_num) {
+    public void setSong_num(String song_num) {
         this.song_num = song_num;
     }
 
@@ -65,6 +59,39 @@ public class Discs {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Discs{" + ", stage_name=" + stage_name + ", album_title=" + album_title + ", song_num=" + song_num + ", duration=" + duration + '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Discs other = (Discs) obj;
+        if (this.song_num != other.song_num) {
+            return false;
+        }
+        
+        if (!Objects.equals(this.stage_name, other.stage_name)) {
+            return false;
+        }
+        if (!Objects.equals(this.album_title, other.album_title)) {
+            return false;
+        }
+        if (!Objects.equals(this.duration, other.duration)) {
+            return false;
+        }
+        return true;
     }
     
     

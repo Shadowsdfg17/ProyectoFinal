@@ -6,6 +6,7 @@
 package com.andrea.proyectofinal.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  *
@@ -14,27 +15,32 @@ import java.util.Date;
 public class Artist extends Person {
 
     private String stage_name;
-    private String id_biography;
-    private int song_num;
-    private int disc_num;
+    private String disc_num;
+    private Biography biography;
 
     public Artist() {
+        
+        this("","",null);
     }
-
-    public Artist(String stage_name, String id_biography, int song_num, int disc_num) {
+    
+    public Artist(String stage_name, String disc_num){
         this.stage_name = stage_name;
-        this.id_biography = id_biography;
-        this.song_num = song_num;
         this.disc_num = disc_num;
     }
 
-    public Artist(String stage_name, String id_biography, int song_num, int disc_num, String name, String lastname, Date birthday) {
+    public Artist(String stage_name,String disc_num,Biography biography) {
+        this.stage_name = stage_name;
+        this.disc_num = disc_num;
+        this.biography = biography;
+    }
+
+    public Artist(String stage_name,String disc_num, String name, String lastname, Date birthday,Biography biography) {
         super(name, lastname, birthday);
         this.stage_name = stage_name;
-        this.id_biography = id_biography;
-        this.song_num = song_num;
         this.disc_num = disc_num;
+        this.biography =  biography;
     }
+    
 
     @Override
     public String getName() {
@@ -74,29 +80,48 @@ public class Artist extends Person {
         this.stage_name = stage_name;
     }
 
-    public String getId_biography() {
-        return id_biography;
-    }
-
-    public void setId_biography(String id_biography) {
-        this.id_biography = id_biography;
-    }
-
-    public int getSong_num() {
-        return song_num;
-    }
-
-    public void setSong_num(int song_num) {
-        this.song_num = song_num;
-    }
-
-    public int getDisc_num() {
+    public String getDisc_num() {
         return disc_num;
     }
 
-    public void setDisc_num(int disc_num) {
+    public void setDisc_num(String disc_num) {
         this.disc_num = disc_num;
     }
+
+    public Biography getBiography() {
+        return biography;
+    }
+
+    public void setBiography(Biography biography) {
+        this.biography = biography;
+    }
+
+    @Override
+    public String toString() {
+        return "Artist{" + "stage_name=" + stage_name + ", disc_num=" + disc_num + ", biography=" + biography + '}';
+    }
+
+   
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Artist other = (Artist) obj;
+
+        if (!Objects.equals(this.stage_name, other.stage_name)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
     @Override
     public int compareTo(IPerson o) {

@@ -17,12 +17,12 @@
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Button>
-      <Button mnemonicParsing="false" onAction="#verArtista2" text="INICIAR SESIÓN COMO ADMINISTRADOR">
+      <Button mnemonicParsing="false" onAction="#iniciaSesion2" text="INICIAR SESIÓN COMO ADMINISTRADOR">
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font>
       </Button>
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="25.0" prefWidth="138.0" text="VOLVER A CONECTAR" />
+        <Button fx:id="secondaryButton" onAction="#retrocederVentana" prefHeight="25.0" prefWidth="138.0" text="VOLVER A CONECTAR" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

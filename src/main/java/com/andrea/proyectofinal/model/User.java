@@ -5,6 +5,8 @@
  */
 package com.andrea.proyectofinal.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author ANDREA
@@ -31,11 +33,40 @@ public class User {
     }
 
     public User() {
+        this("","");
     }
 
     public User(String user, String password) {
         this.user = user;
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "user=" + user + ", password=" + password + '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final User other = (User) obj;
+        if (!Objects.equals(this.user, other.user)) {
+            return false;
+        }
+        if (!Objects.equals(this.password, other.password)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 }

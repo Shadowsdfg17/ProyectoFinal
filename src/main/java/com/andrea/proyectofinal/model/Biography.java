@@ -5,7 +5,7 @@
  */
 package com.andrea.proyectofinal.model;
 
-import java.util.Date;
+import java.util.Objects;
 
 /**
  *
@@ -13,31 +13,19 @@ import java.util.Date;
  */
 public class Biography {
 
-    private String id_artist;
     private String stage_name;
-    private String name;
-    private String lastname;
-    private Date birthday;
     private String description;
 
     public Biography() {
     }
-
-    public Biography(String id_artist, String stage_name, String name, String lastname, Date birthday, String description) {
-        this.id_artist = id_artist;
-        this.stage_name = stage_name;
-        this.name = name;
-        this.lastname = lastname;
-        this.birthday = birthday;
+    
+    public Biography(String description){
         this.description = description;
     }
 
-    public String getId_artist() {
-        return id_artist;
-    }
-
-    public void setId_artist(String id_artist) {
-        this.id_artist = id_artist;
+    public Biography(String stage_name, String description) {
+        this.stage_name = stage_name;
+        this.description = description;
     }
 
     public String getStage_name() {
@@ -48,30 +36,6 @@ public class Biography {
         this.stage_name = stage_name;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -79,6 +43,28 @@ public class Biography {
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Biography{" + "stage_name=" + stage_name + ", description=" + description + '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Biography other = (Biography) obj;
+        if (!Objects.equals(this.stage_name, other.stage_name)) {
+            return false;
+        }
+        return true;
+    }
+
 }
